@@ -11,11 +11,46 @@ var losses = 0
 
 
 // ******************Stones***************
-var thunderStone = [Math.floor(Math.random() * 10) + 1];
-var fireStone = [Math.floor(Math.random() * 10) + 1];
-var leafStone = [Math.floor(Math.random() * 10) + 1];
-var moonStone = [Math.floor(Math.random() * 10) + 1];
+var thunderStone = Math.floor(Math.random() * 10) + 1;
+var fireStone = Math.floor(Math.random() * 10) + 1;
+var leafStone = Math.floor(Math.random() * 10) + 1;
+var moonStone = Math.floor(Math.random() * 10) + 1;
+
+
+// *********DOM Manipulatrions************
+$("#targetNumber").text(targetNumber);
+$("#wins").text(wins);
+$("#losses").text(losses);
+$("#counter").text(counter);
+
+
 
 // *************Functions***************
+function startGame(){
+targetNumber = [Math.floor(Math.random() * 101)+ 19];
+
+counter = 0
+
+wins = 0
+losses = 0
+
+thunderStone = Math.floor(Math.random() * 10) + 1;
+fireStone = Math.floor(Math.random() * 10) + 1;
+leafStone = Math.floor(Math.random() * 10) + 1;
+moonStone = Math.floor(Math.random() * 10) + 1;
+}
+
+
+$("#thunder").on("click", function(){
+    counter += thunderStone;
+    
+    console.log(counter);
+
+
+
+
+
+    console.log(thunderStone)
+})
 
 // *************
