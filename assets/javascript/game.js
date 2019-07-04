@@ -18,10 +18,10 @@ var moonStone = Math.floor(Math.random() * 10) + 1;
 
 
 // *********DOM Manipulations************
-$("#targetNumber").text(targetNumber);
-$("#wins").text(wins);
-$("#losses").text(losses);
-$("#counter").text(counter);
+$("#targetNumber").text("Goal: " + targetNumber);
+$("#wins").text("Wins: " + wins);
+$("#losses").text("Losses: " + losses);
+$("#counter").text("Counter: " + counter);
 
 
 
@@ -40,7 +40,7 @@ leafStone = Math.floor(Math.random() * 10) + 1;
 moonStone = Math.floor(Math.random() * 10) + 1;
 }
 
-
+// ***************** Click Functions ********************
 $("#thunder").on("click", function(){
     counter += thunderStone;
     var stoneValue = ($(this).attr("data-stonevalue"));
@@ -68,5 +68,26 @@ $("#moon").on("click", function(){
     stoneValue = parseInt(stoneValue);
     console.log(counter);
 });
+
+$("#stones").on("click", function(){
+    $("#counter").text("Counter: " + counter);
+
+    // ************************ Wins *******************
+
+    if (counter === targetNumber) {
+        alert("You Win!");
+        $("#wins").text("Wins: " + wins++);
+        wins = parseInt(wins);
+        startGame();
+    }
+// ***************** Losees ********************
+    else if (counter > targetNumber) {
+        alert("You lose lol");
+        $("#losses").text("Losses: " + losses++);
+        losses = parseInt(losses);
+        startGame();
+    }
+});
+
 
 
