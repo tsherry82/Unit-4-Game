@@ -4,10 +4,10 @@ var targetNumber = [Math.floor(Math.random() * 101)+ 19];
 
 
 // **********Score***********
-var counter = 0
+var counter = 0;
 
-var wins = 0
-var losses = 0
+var wins = 0;
+var losses = 0;
 
 
 // ******************Stones***************
@@ -29,10 +29,7 @@ $("#counter").text("Counter: " + counter);
 function startGame(){
 targetNumber = [Math.floor(Math.random() * 101)+ 19];
 
-counter = 0
-
-wins = 0
-losses = 0
+counter = 0;
 
 thunderStone = Math.floor(Math.random() * 10) + 1;
 fireStone = Math.floor(Math.random() * 10) + 1;
@@ -74,16 +71,19 @@ $("#stones").on("click", function(){
 
     // ************************ Wins *******************
 
-    if (counter === targetNumber) {
+    if (counter == targetNumber) {
         alert("You Win!");
-        $("#wins").text("Wins: " + wins++);
+        wins++
+        $("#wins").text("Wins: " + wins);
         wins = parseInt(wins);
         startGame();
     }
 // ***************** Losees ********************
+
     else if (counter > targetNumber) {
         alert("You lose lol");
-        $("#losses").text("Losses: " + losses++);
+        losses++
+        $("#losses").text("Losses: " + losses);
         losses = parseInt(losses);
         startGame();
     }
