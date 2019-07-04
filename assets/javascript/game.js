@@ -17,7 +17,7 @@ var leafStone = Math.floor(Math.random() * 10) + 1;
 var moonStone = Math.floor(Math.random() * 10) + 1;
 
 
-// *********DOM Manipulatrions************
+// *********DOM Manipulations************
 $("#targetNumber").text(targetNumber);
 $("#wins").text(wins);
 $("#losses").text(losses);
@@ -43,14 +43,30 @@ moonStone = Math.floor(Math.random() * 10) + 1;
 
 $("#thunder").on("click", function(){
     counter += thunderStone;
-    
+    var stoneValue = ($(this).attr("data-stonevalue"));
+    stoneValue = parseInt(stoneValue);
     console.log(counter);
+});
+
+$("#fire").on("click", function(){
+    counter += fireStone;
+    var stoneValue = ($(this).attr("data-stonevalue"));
+    stoneValue = parseInt(stoneValue);
+    console.log(counter);
+});
+
+$("#leaf").on("click", function(){
+    counter += leafStone;
+    var stoneValue = ($(this).attr("data-stonevalue"));
+    stoneValue = parseInt(stoneValue);
+    console.log(counter);
+});
+
+$("#moon").on("click", function(){
+    counter += moonStone;
+    var stoneValue = ($(this).attr("data-stonevalue"));
+    stoneValue = parseInt(stoneValue);
+    console.log(counter);
+});
 
 
-
-
-
-    console.log(thunderStone)
-})
-
-// *************
