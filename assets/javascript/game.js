@@ -28,6 +28,7 @@ $("#counter").text("Counter: " + counter);
 // *************Functions***************
 function startGame(){
 targetNumber = [Math.floor(Math.random() * 101)+ 19];
+$("#targetNumber").text("Goal: " + targetNumber);
 
 counter = 0;
 
